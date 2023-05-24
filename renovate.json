@@ -1,0 +1,43 @@
+
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "platform": "gitlab",
+  "endpoint": "https://mygitlab/api/v4/",
+  "onboarding": false,
+  "requireConfig": false,
+  "token": "mytoken",
+  "autodiscover": true,
+  "hostRules": [
+    {
+      "hostType": "maven",
+      "matchHost": "https://mynexus/repository",
+    },
+    {
+      "hostType": "nuget",
+      "matchHost": "https://mynexus/repository",
+    }
+  ],
+  "packageManagers": [
+    "pip",
+    "npm",
+    "yarn",
+    "nuget",
+    "gomod",
+    "pub",
+    "maven"
+  ],
+  "packageRules": [
+    {
+      "packagePatterns": [
+        ".*sdl.*",
+        ".*edl.*",
+        ".*pdl.*"
+      ],
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ],
+      "enabled": false
+    },
+  ]
+}
